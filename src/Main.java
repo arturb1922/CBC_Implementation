@@ -119,22 +119,15 @@ public class Main {
         String decryptedStrng;
 
         // szyfrowanie
-        long startTime1= System.nanoTime();
-        byte [] resultOfEncrypt = encrypt(plain);
-        long estimatedTime1 = System.nanoTime()-startTime1;
-
         System.out.println("The orginal text was " + plainString);
 
+        byte [] resultOfEncrypt = encrypt(plain);
         encryptedString=new String (resultOfEncrypt,"UTF-8");
-        System.out.println("Time estimated to encrypt with CBC mode: " + estimatedTime1+ " ns");
         System.out.println("The encrypted message " + encryptedString);
 
         // deszyfrowanie
-        long startTime2= System.nanoTime();
         byte [] resultOfDecrypt = decrypt(resultOfEncrypt);
-        long estimatedTime2 = System.nanoTime()-startTime1;
         decryptedStrng = new String( resultOfDecrypt,"UTF-8");
-        System.out.println("Time estimated to decrypt with CBC mode: " + estimatedTime2 +" ns");
         System.out.println("The result of decryption " + decryptedStrng);
     }
 
